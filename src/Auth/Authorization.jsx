@@ -9,7 +9,7 @@ export const Authorization=()=>{
 
     const validationSchema = Yup.object({
         name: Yup.string().required("Это поле обязательно для ввода"),
-        email: Yup.email("Неверный формат почты").required("Это поле обязательно для ввода"),
+        email: Yup.string().email("Неверный формат почты").required("Это поле обязательно для ввода"),
         password: Yup.string().required("Это поле обязательно для ввода")
     });
 
