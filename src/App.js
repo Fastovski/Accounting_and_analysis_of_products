@@ -4,6 +4,8 @@ import {Registration} from './Auth/Registration';
 import { Authorization } from './Auth/Authorization';
 import { AddEmployee } from './Admin/AddEmployee';
 import { UpdateEmployee } from './Admin/UpdateEmployee';
+import { AdminMenu } from './Admin/AdminMenu';
+
 import './App.css';
 
 function App() {
@@ -16,6 +18,7 @@ function App() {
         </Routes>
         <Routes>
           <Route path = '/admin/add' element = {<AddEmployee/>}/>
+          <Route path = '/admin' element = {<AdminMenu/>}/>
           <Route path = '/admin/update/:id' element = {<UpdateEmployee/>}/>
         </Routes>
       </Router>
