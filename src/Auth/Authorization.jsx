@@ -21,9 +21,9 @@ export const Authorization=()=>{
                     localStorage.setItem("id", JSON.stringify(response.data.id));
                     navigate("/user");
                 }
-                if (response.data.role === "Manager"){
+                if (response.data.role === "Employee"){
                     localStorage.setItem("id", JSON.stringify(response.data.id));
-                    navigate("/manager");
+                    navigate("/employee");
                 }
                 if (response.data.role === "Admin"){
                     localStorage.setItem("id", JSON.stringify(response.id));

@@ -5,8 +5,10 @@ import { Authorization } from './Auth/Authorization';
 import { AddEmployee } from './Admin/AddEmployee';
 import { UpdateEmployee } from './Admin/UpdateEmployee';
 import { AdminMenu } from './Admin/AdminMenu';
-
+import { EmployeeMenu } from './Manager/EmployeeMenu';
+import { AddItem } from './Manager/AddItem';
 import './App.css';
+
 
 function App() {
   return (
@@ -20,6 +22,10 @@ function App() {
           <Route path = '/admin/add' element = {<AddEmployee/>}/>
           <Route path = '/admin' element = {<AdminMenu/>}/>
           <Route path = '/admin/update/:id' element = {<UpdateEmployee/>}/>
+        </Routes>
+        <Routes>
+          <Route path = '/banquet/add' element = {<AddItem/>}/>
+          <Route path = '/employee' element = {<EmployeeMenu/>}/>
         </Routes>
       </Router>
       

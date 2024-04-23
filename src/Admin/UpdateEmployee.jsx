@@ -49,7 +49,7 @@ export const UpdateEmployee=()=> {
 
     return (
       <div>
-        <Formik initialValues={{ name: '', email: '', password: '' }} validationSchema={validationSchema} onSubmit={onSubmit}>
+        <Formik initialValues={{ name: '', email: ''}} validationSchema={validationSchema} onSubmit={onSubmit}>
             <Form>
                     <div className="form-group">
                       <label htmlFor="name">Имя</label>
