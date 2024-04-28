@@ -7,6 +7,8 @@ import { UpdateEmployee } from './Admin/UpdateEmployee';
 import { AdminMenu } from './Admin/AdminMenu';
 import { EmployeeMenu } from './Manager/EmployeeMenu';
 import { AddItem } from './Manager/AddItem';
+import { UserMenu } from './Client/UserMenu';
+
 import './App.css';
 
 
@@ -26,6 +28,9 @@ function App() {
         <Routes>
           <Route path = '/banquet/add' element = {<AddItem/>}/>
           <Route path = '/employee' element = {<EmployeeMenu/>}/>
+        </Routes>
+        <Routes>
+          <Route path="/user" element={<UserMenu/>}/>
         </Routes>
       </Router>
       
