@@ -8,6 +8,7 @@ import { AdminMenu } from './Admin/AdminMenu';
 import { EmployeeMenu } from './Manager/EmployeeMenu';
 import { AddItem } from './Manager/AddItem';
 import { UserMenu } from './Client/UserMenu';
+import { NewProposal } from './Client/NewProposal';
 
 import './App.css';
 
@@ -31,6 +32,7 @@ function App() {
         </Routes>
         <Routes>
           <Route path="/user" element={<UserMenu/>}/>
+          <Route path="/proposal/add/:id" element={<NewProposal/>}/>
         </Routes>
       </Router>
       
