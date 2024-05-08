@@ -42,6 +42,9 @@ export const EmployeeMenu=()=> {
                         
                     </div>
                     <Link className="btn btn-danger w-50 my-2" to={"/banquet/add"}>Добавить продукт</Link>
+                    <Link className="btn btn-danger w-50 my-2" to={"/employee/handle"}>|  Одобрить заявку</Link>
+
+
                 </div>
             </nav>
             <MUIDataTable

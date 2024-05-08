@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
-import { Link } from 'react-router-dom';
 import MUIDataTable from "mui-datatables";
 import Dropdown from 'react-bootstrap/Dropdown';
 
-export const UserMenu=()=> {
-    
-    const [product, setProduct] = useState([]);
+export const PayedContracts = () => {
 
+    const [proposal, setProposal] = useState([]);
     const [money, setMoney] = useState({});
 
     const { cash } = money;
 
     useEffect(() => {
-        loadProduct();
+        loadProposal(localStorage.getItem("id"));
         loadMoney(localStorage.getItem("id"));
     }, []);
 
@@ -22,22 +20,21 @@ export const UserMenu=()=> {
         setMoney(result.data);
     }
 
-    const loadProduct = async () => {
-        const result = await axios.get("http://localhost:8081/banquet/get");
-        setProduct(result.data);
+    const loadProposal = async (id) => {
+        const result = await axios.get(`http://localhost:8081/contract/get/${id}`);
+        setProposal(result.data);
     }
 
-    const columns = ["Name", "Category", "Cost", "Action"];
-        
-        
-    const data = product.map((product, index) => [product.name, product.category, product.cost, [<Link key={index} className='btn btn-outline-primary mx-2' to={`/proposal/add/${product.id}`}>Оформить заявку</Link>]]);
+    const columns = ["Название","Время","Общая Стоимость","Дата оформления"];
+
+    const data = proposal.map((proposals) => [proposals.proposalId.productId.name, proposals.proposalId.deliveryTime, proposals.proposalId.totalCost,proposals.conclusion]);
 
     const options = {
-        selectableRowsOnClick: false,
-        selectableRowsHideCheckboxes: true
+        selectableRowsOnClick:false,
+        selectableRowsHideCheckboxes:true
     };
     return (
-        <div>
+        <div >
             <nav className="navbar navbar-expand-lg navbar-light bg-light ">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="/">Home</a>
@@ -50,14 +47,16 @@ export const UserMenu=()=> {
                                 <Dropdown.Toggle variant="nav-item" id="dropdown-basic">
                                     Операции
                                 </Dropdown.Toggle>
+
                                 <Dropdown.Menu>
-                                    <Dropdown.Item href="/user/contracts">| Контракты   |</Dropdown.Item>
-                                    <Dropdown.Item href="/proposal/history"> История заявок |</Dropdown.Item>
+                                    <Dropdown.Item href="/user">| Меню |</Dropdown.Item>
                                     <Dropdown.Item href="/proposal/approved"> Одобренные заявки |</Dropdown.Item>
-                                    <Dropdown.Item href="/user/money"> Пополнение баланса |</Dropdown.Item>
-                                    <Dropdown.Divider />
+                                    <Dropdown.Item href="/proposal/history"> История заявок |</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
+                            {/* <li className="nav-item">
+                                <a className="nav-link" href="#">Users</a>
+                            </li> */}
                             <span className="navbar-text" style={{ color: 'black' }}>
                                 Cash:{cash}
                             </span>
@@ -74,3 +73,4 @@ export const UserMenu=()=> {
         </div>
     )
 }
+
