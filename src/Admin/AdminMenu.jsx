@@ -47,6 +47,8 @@ export const AdminMenu = () => {
 
                               <Dropdown.Menu>
                                   <Dropdown.Item style={{screenLeft: '20px'}} href="/admin/add">Добавить работника  |  </Dropdown.Item>
+                                  <Dropdown.Item style={{screenLeft: '20px'}} href="/admin/graphmodel">График отчетности  |  </Dropdown.Item>
+
                                   {/* <Dropdown.Item href="/admin/chart">График отчетности менеджеров</Dropdown.Item>  */}
 
                               </Dropdown.Menu>

@@ -14,9 +14,11 @@ import { HadlingProposal } from './Manager/HadlingProposal';
 import { HistoryProposal } from './Client/HistoryProposal';
 import { ApprovedProposal } from './Client/AprovedProposal';
 import { PayedContracts } from './Client/PayedContracts';
-import Money from './Client/Money';
+import { GraphModel } from './Admin/GraphManager';
+import {Money} from './Client/Money';
 
 import './App.css';
+
 
 
 
@@ -31,6 +33,8 @@ function App() {
           <Route path = '/admin/add' element = {<AddEmployee/>}/>
           <Route path = '/admin' element = {<AdminMenu/>}/>
           <Route path = '/admin/update/:id' element = {<UpdateEmployee/>}/>
+          <Route path = '/admin/graphmodel' element = {<GraphModel/>}/>
+
 
           <Route path = '/banquet/add' element = {<AddItem/>}/>
           <Route path = '/employee' element = {<EmployeeMenu/>}/>
