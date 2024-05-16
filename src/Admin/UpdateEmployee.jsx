@@ -3,6 +3,7 @@ import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import axios from "axios";
+import './UpdateEmployee.css'
 
 export const UpdateEmployee=()=> {
     
@@ -48,24 +49,30 @@ export const UpdateEmployee=()=> {
     }
 
     return (
-      <div>
-        <Formik initialValues={{ name: '', email: ''}} validationSchema={validationSchema} onSubmit={onSubmit}>
-            <Form>
-                    <div className="form-group">
-                      <label htmlFor="name">Имя</label>
-                      <Field name="name" type="text" className="form-control" />
-                      <ErrorMessage name="name" component="div" style={{ color: "red", height: 30 }} />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="email">Email</label>
-                      <Field name="email" type="email" className="form-control" />
-                      <ErrorMessage name="email" component="div" style={{ color: "red", height: 30 }} />
-                    </div>
-                    <button type="submit" className="btn btn-primary w-25">Иззменить</button>
-                  </Form>
-        </Formik>
-
-        <Link className="btn btn-danger w-50 my-2" to={"/admin"}>Назад</Link>
+        <div className="update-employee">
+            <div className='form-update'>
+                <Formik initialValues={{ name: '', email: ''}} validationSchema={validationSchema} onSubmit={onSubmit}>
+                    <Form>
+                      <div className="form-group name-group">
+                        <label htmlFor="name">Имя</label>
+                        <Field name="name" type="text" className="form-control name-field" />
+                        <ErrorMessage name="name" component="div" style={{ color: "red", height: 30 }} />
+                      </div>
+                      <div className="form-group email-group">
+                        <label htmlFor="email">Email</label>
+                        <Field name="email" type="email" className="form-control email-field" />
+                        <ErrorMessage name="email" component="div" style={{ color: "red", height: 30 }} />
+                      </div>
+                      <div className="submit-button">
+                        <button type="submit" className="btn btn-primary w-25">Изменить</button>
+                      </div>
+                    </Form>
+                </Formik>
+  
+                <div className="back-link">
+                <Link className="btn btn-danger w-50 my-2" to={"/admin"}>Назад</Link>
+                </div>
+            </div>
         </div>
-    )
+      );
 }

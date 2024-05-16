@@ -3,6 +3,7 @@ import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import './Registration.css';
 
 export const Registration=()=>{
     let navigate = useNavigate();
@@ -28,25 +29,31 @@ export const Registration=()=>{
     }
 
     return(
-        <Formik initialValues={{ name: '', email: '', password: '' }} validationSchema={validationSchema} onSubmit={onSubmit}>
-            <Form>
-                <div>
-                    <label htmlFor="name">Имя</label>
-                    <Field name="name" type="text" />
-                    <ErrorMessage name="name" component="div" />
-                </div>
-                <div>
-                    <label htmlFor="email">Email</label>
-                    <Field name="email" type="email" />
-                    <ErrorMessage name="email" component="div" />
-                </div>
-                <div>
-                    <label htmlFor="password">Пароль</label>
-                    <Field name="password" type="password" />
-                    <ErrorMessage name="password" component="div" />
-                </div>
-                <button type="submit">Отправить</button>
-            </Form>
-        </Formik>
+        <div className="registration-background">
+            <div className='form-background'>
+            <Formik initialValues={{ name: '', email: '', password: '' }} validationSchema={validationSchema} onSubmit={onSubmit}>
+                <Form className="registration-form">
+                    <div className="name-div">
+                        <label htmlFor="name">Имя</label>
+                        <Field name="name" type="text" className="name-field" />
+                        <ErrorMessage name="name" component="div" />
+                    </div>
+                    <div className="email-div">
+                        <label htmlFor="email">Email</label>
+                        <Field name="email" type="email" className="email-field" />
+                        <ErrorMessage name="email" component="div" />
+                    </div>
+                    <div className="password-div">
+                        <label htmlFor="password">Пароль</label>
+                        <Field name="password" type="password" className="password-field" />
+                        <ErrorMessage name="password" component="div" />
+                    </div>
+                    <div className="submit-button">
+                        <button type="submit">Отправить</button>
+                    </div>
+                </Form>
+            </Formik>
+            </div>
+        </div>
     );
 } 

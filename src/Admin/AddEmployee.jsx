@@ -28,20 +28,20 @@ export const AddEmployee = () => {
     }
 
     return(
-        <div>
+        <div className="add-employee-form">
             <Formik initialValues={{ name: '', email: '', password: '' }} validationSchema={validationSchema} onSubmit={onSubmit}>
                 <Form>
-                <div>
+                    <div className="form-field">
                         <label htmlFor="name">Имя</label>
                         <Field name="name" type="text" />
                         <ErrorMessage name="name" component="div" />
                     </div>
-                    <div>
+                    <div className="form-field">
                         <label htmlFor="email">Email</label>
                         <Field name="email" type="email" />
                         <ErrorMessage name="email" component="div" />
                     </div>
-                    <div>
+                    <div className="form-field">
                         <label htmlFor="password">Пароль</label>
                         <Field name="password" type="password" />
                         <ErrorMessage name="password" component="div" />

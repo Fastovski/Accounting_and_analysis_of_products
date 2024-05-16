@@ -1,0 +1,58 @@
+.registration-background {
+    background-color: #FDEBD0; 
+    padding: 2vw; 
+    border-radius: 10px;
+    box-sizing: border-box; /* Это убедится, что padding включен в общую ширину и высоту элемента */
+    min-height: 100vh; /* Установите минимальную высоту равной высоте окна просмотра */
+}
+
+.form-background{
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 2vw; 
+    margin-left: 10vw;
+    margin-right: 10vw;
+    box-sizing: border-box; /* Это убедится, что padding включен в общую ширину и высоту элемента */
+}
+
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; 
+}
+
+.name-div, .email-div, .password-div {
+    margin-bottom: 1vw; 
+    width: 50%;
+}
+
+.name-field, .email-field, .password-field {
+    width: 80%; 
+    padding: 1vw; 
+    margin-left: 1vw;
+    margin-right: 1vw;
+    border-radius: 5px;
+    border: 1px solid #D98880; 
+}
+
+.submit-button {
+    margin-top: 2vw; 
+    width: 100%; 
+}
+
+.submit-button button {
+    background-color: #D98880; 
+    color: white;
+    padding: 1vw 1vw; /* Используйте вьюпорты для отступов, чтобы они масштабировались с размером окна */
+    margin-left: 1vw;
+    margin-right: 1vw;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 40%; 
+}
+
+.submit-button button:hover {
+    background-color: #C0392B; 
+}

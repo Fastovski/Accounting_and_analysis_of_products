@@ -3,6 +3,7 @@ import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import './Authorization.css'
 
 export const Authorization=()=>{
     let navigate = useNavigate();
@@ -39,26 +40,32 @@ export const Authorization=()=>{
     };
 
     return(
-        <Formik initialValues={{ name: '', email: '', password: '' }} validationSchema={validationSchema} onSubmit={onSubmit}>
-            <Form>
-                    <div className="form-group">
-                      <label htmlFor="name">Имя</label>
-                      <Field name="name" type="text" className="form-control" />
-                      <ErrorMessage name="name" component="div" style={{ color: "red", height: 30 }} />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="email">Email</label>
-                      <Field name="email" type="email" className="form-control" />
-                      <ErrorMessage name="email" component="div" style={{ color: "red", height: 30 }} />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="password">Пароль</label>
-                      <Field name="password" type="password" className="form-control" />
-                      <ErrorMessage name="password" component="div" style={{ color: "red", height: 30 }} />
-                    </div>
-                    <button type="submit" className="btn btn-primary w-25">Войти</button>
-                  </Form>
-        </Formik>
-    );      
+        <div className="authorization-background">
+            <div className='form-background'>
+            <Formik initialValues={{ name: '', email: '', password: '' }} validationSchema={validationSchema} onSubmit={onSubmit}>
+                <Form className="authorization-form">
+                        <div className="form-group name-group">
+                          <label htmlFor="name">Имя</label>
+                          <Field name="name" type="text" className="form-control name-field" />
+                          <ErrorMessage name="name" component="div" style={{ color: "red", height: 30 }} />
+                        </div>
+                        <div className="form-group email-group">
+                          <label htmlFor="email">Email</label>
+                          <Field name="email" type="email" className="form-control email-field" />
+                          <ErrorMessage name="email" component="div" style={{ color: "red", height: 30 }} />
+                        </div>
+                        <div className="form-group password-group">
+                          <label htmlFor="password">Пароль</label>
+                          <Field name="password" type="password" className="form-control password-field" />
+                          <ErrorMessage name="password" component="div" style={{ color: "red", height: 30 }} />
+                        </div>
+                        <div className="submit-button">
+                            <button type="submit" className="btn btn-primary w-25">Войти</button>
+                        </div>
+                </Form>
+            </Formik>
+            </div>
+        </div>
+    );   
 
 }
