@@ -1,14 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
 import MUIDataTable from "mui-datatables";
-import Dropdown from 'react-bootstrap/Dropdown';
+import './menu.css'
 
 export const ApprovedProposal = () => {
-    const backgroundImage = {
-        backgroundImage: `url('https://img.freepik.com/free-vector/wavy-background-with-copy-space_52683-65230.jpg?w=1060&t=st=1683470888~exp=1683471488~hmac=5f886b9474bab136ac2138b9c684fedb5f0987d5ddef6beb1e86d035b4c2fc1c')`,
-        backgroundSize: 'cover',
-        height: '100vh',
-    };
     const [proposal, setProposal] = useState([]);
     const [prop,setProp]=useState({});
     const [money, setMoney] = useState({});
@@ -39,9 +34,9 @@ export const ApprovedProposal = () => {
         loadProposal();
     }
 
-    const columns = ["Название","Начало","Конец","Общая Стоимость","Состояние","Action"];
+    const columns = ["Название","Общая Стоимость","Состояние","Action"];
 
-    const data = proposal.map((proposals,index) => [proposals.proposalId.productId.name, proposals.proposalId.deliveryTime, proposals.proposalId.totalCost, proposals.proposalId.approve===true?<p>Одобрена</p>: <p>В обработке</p>,[<button key={index} className='btn btn-outline-primary mx-2' type='button' onClick={()=>{ if(proposals.proposalId.totalCost<cash){bought(proposals.id);  
+    const data = proposal.map((proposals,index) => [proposals.proposalId.productId.name, proposals.proposalId.totalCost, proposals.proposalId.approve===true?<p>Одобрена</p>: <p>В обработке</p>,[<button key={index} className='btn btn-outline-primary mx-2' type='button' onClick={()=>{ if(proposals.proposalId.totalCost<cash){bought(proposals.id);  
         setProp(prevState=>({...prevState,
         totalCost:proposals.proposalId.totalCost,
         clientId:{id:proposals.proposalId.clientId.id}
@@ -52,29 +47,27 @@ export const ApprovedProposal = () => {
         selectableRows: 'single'
     };
     return (
-        <div style={backgroundImage}>
+        <div className='menu'>
             <nav className="navbar navbar-expand-lg navbar-light bg-light ">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="/">Home</a>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav me-auto">
-                            <Dropdown>
-                                <Dropdown.Toggle variant="nav-item" id="dropdown-basic">
-                                    Операции
-                                </Dropdown.Toggle>
-
-                                <Dropdown.Menu>
-                                    <Dropdown.Item href="/user">| Меню |</Dropdown.Item>
-                                    <Dropdown.Item href="/user/contracts"> Контракты |</Dropdown.Item>
-                                    <Dropdown.Item href="/proposal/history"> История заявок |</Dropdown.Item>
-                                </Dropdown.Menu>
-                            </Dropdown>
-                            {/* <li className="nav-item">
-                                <a className="nav-link" href="#">Users</a>
-                            </li> */}
+                            <li className="nav-item">
+                                <a className="nav-link" href="/user"> Меню</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/proposal/history">История заявок</a>
+                            </li>
+                            <li className='nav-link'>
+                                <a className="nav-link" href="/user/contracts">Контракты</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/user/money">Пополнение баланса</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/map">О нас</a>
+                            </li>
                             <span className="navbar-text" style={{ color: 'black' }}>
                                 Cash:{cash}
                             </span>
@@ -82,12 +75,14 @@ export const ApprovedProposal = () => {
                     </div>
                 </div>
             </nav>
-            <MUIDataTable
-                data={data}
-                columns={columns}
-                options={options}
-            />
-
+            <br/>
+      <div className="table-div">
+        <MUIDataTable
+            data={data}
+            columns={columns}
+            options={options}
+        />
+      </div>
         </div>
     )
 }

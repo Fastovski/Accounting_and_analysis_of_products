@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from "axios";
 import { Link } from 'react-router-dom';
 import MUIDataTable from "mui-datatables";
-import Dropdown from 'react-bootstrap/Dropdown';
+import './UserMenu.css'
 
 export const UserMenu=()=> {
     
@@ -37,41 +37,43 @@ export const UserMenu=()=> {
         selectableRowsHideCheckboxes: true
     };
     return (
-        <div>
+        <div className='usermenu'>
             <nav className="navbar navbar-expand-lg navbar-light bg-light ">
-                <div className="container-fluid">
+                <div className="container-fluid nav-div">
                     <a className="navbar-brand" href="/">Home</a>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    {/* <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
-                    </button>
+                    </button> */}
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav me-auto">
-                            <Dropdown>
-                                <Dropdown.Toggle variant="nav-item" id="dropdown-basic">
-                                    Операции
-                                </Dropdown.Toggle>
-                                <Dropdown.Menu>
-                                    <Dropdown.Item href="/user/contracts">| Контракты   |</Dropdown.Item>
-                                    <Dropdown.Item href="/proposal/history"> История заявок |</Dropdown.Item>
-                                    <Dropdown.Item href="/proposal/approved"> Одобренные заявки |</Dropdown.Item>
-                                    <Dropdown.Item href="/user/money"> Пополнение баланса |</Dropdown.Item>
-                                    <Dropdown.Item href="/map"> Карта |</Dropdown.Item>
-
-                                    <Dropdown.Divider />
-                                </Dropdown.Menu>
-                            </Dropdown>
-                            <span className="navbar-text" style={{ color: 'black' }}>
-                                Cash:{cash}
-                            </span>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/user/contracts">Контракты</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/proposal/history">История заявок</a>
+                            </li>
+                            <li className='nav-link'>
+                                <a className="nav-link" href="/proposal/approved">Одобренные заявки</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/user/money">Пополнение баланса</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/map">О нас</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </nav>
+            <br/>
+            <div className='table-div'>
             <MUIDataTable
                 data={data}
                 columns={columns}
                 options={options}
             />
+            </div>
+            
 
         </div>
     )

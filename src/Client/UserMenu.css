@@ -1,0 +1,44 @@
+/* Основные стили для формы */
+.usermenu{
+    background-color: #778899;
+    height: 100vh; /* Добавлено: Задает высоту контейнера равной высоте окна просмотра */
+    min-height: 100vh;
+}
+
+.container-fluid {
+    background-color: #f8f8ff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 100%; /* Изменено: Задает ширину контейнера равной ширине окна просмотра */
+    box-sizing: border-box;
+}
+
+.navbar-nav.me-auto {
+    display: flex;
+    justify-content: center; /* Изменено: Выравнивает элементы по центру */
+    gap: 80px; /* Добавлено: Задает расстояние между элементами */
+    background-color: #dcdcdc; /* Очень светло-серый цвет */
+}
+
+.nav-item {
+    list-style-type: none;
+}
+
+.nav-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+/* Стили для таблицы */
+.table-div {
+    background-color: #f8f8ff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 100%; /* Изменено: Задает ширину контейнера равной ширине окна просмотра */
+    box-sizing: border-box;
+}

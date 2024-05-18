@@ -1,6 +1,7 @@
 /* Основные стили для формы */
 .back-color{
     background-color: #778899;
+    min-height: 100vh;
 }
 
 .add-employee-form {

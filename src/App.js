@@ -18,6 +18,7 @@ import { GraphModel } from './Admin/GraphManager';
 import {Money} from './Client/Money';
 import MapComponent from './Client/Map';
 import { AboutUsUpdate } from './Admin/aboutUs';
+import { Index } from './Auth/index';
 
 
 import './App.css';
@@ -33,6 +34,7 @@ function App() {
         <Routes>
         <Route path='reg' element={<Registration/>}/>
           <Route path='auth' element = {<Authorization/>}/>
+          <Route path='/' element = {<Index/>}/>
 
           <Route path = '/admin/add' element = {<AddEmployee/>}/>
           <Route path = '/admin/aboutusupdate' element = {<AboutUsUpdate/>}/>
@@ -47,8 +49,8 @@ function App() {
           <Route path = '/employee/handle' element={<HadlingProposal/>}/>
 
           <Route path="/user" element={<UserMenu/>}/>
+          
           <Route path="/map" element={<MapComponent/>}/>
-
           <Route path="/proposal/add/:id" element={<NewProposal/>}/>
           <Route path="/proposal/history" element={<HistoryProposal/>}/>
           <Route path="/proposal/approved" element={<ApprovedProposal/>}/>
