@@ -1,57 +1,47 @@
-.update-employee {
-    background-color: #FDEBD0; 
-    padding: 2vw; 
-    border-radius: 10px;
-    box-sizing: border-box; 
-    min-height: 100vh; 
+/* Основные стили для формы */
+.back-color{
+    background-color: #778899;
+    min-height: 100vh;
 }
 
-.form-update{
-    background-color: #ffffff;
-    border-radius: 10px;
-    padding: 1vw; 
-    margin-left: 10vw;
-    margin-right: 10vw;
-    box-sizing: border-box; 
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%; 
-}
-
-.name-group, .email-group {
-    margin-bottom: 1vw; 
-    width: 60%;
-}
-
-.name-field, .email-field {
-    width: 60%; 
-    padding: 1vw; 
-    padding-left: 5vw;
-    padding-right: 5vw;
+.container {
+    background-color: #f8f8ff;
+    padding: 20px;
     border-radius: 5px;
-    border: 1px solid #D98880; 
+    max-width: 600px;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
-.submit-button {
-    margin-top: 2vw; 
-    width: 100%; 
+/* Стили для полей ввода */
+.form-control {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border: 1px solid #95959f;
 }
 
-.submit-button button {
-    background-color: #D98880; 
-    color: white;
-    padding: 1vw 1vw; /* Увеличиваем вертикальный padding */
+/* Стили для кнопки отправки формы */
+.btn {
+    background-color: #95959f;
+    color: #f8f8ff;
+    padding: 10px;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-    width: 30%; 
-    text-align: center; /* Выравниваем текст по центру */
+    width: 100%;
+    margin-top: 10px;
 }
 
-.submit-button button:hover {
-    background-color: #C0392B; 
+/* Стили для сообщений об ошибках */
+.form-group div {
+    color: red;
+    font-size: 14px;
+}
+
+/* Стили для автоувеличения текстового поля */
+textarea {
+    resize: vertical;
+    min-height: 50px;
 }

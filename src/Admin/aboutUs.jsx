@@ -3,13 +3,10 @@ import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import axios from "axios";
+import './aboutUs.css'
 
 export const AboutUsUpdate = () => {
-    const backgroundImage = {
-        backgroundImage: `url('https://img.freepik.com/free-photo/vivid-blurred-colorful-wallpaper-background_58702-3798.jpg?w=1060&t=st=1683413534~exp=1683414134~hmac=136e29435bddd80663aead51000dfe812335b02c2986346fdedc21dddb668a56')`,
-        backgroundSize: 'cover',
-        height: '100vh',
-    };
+    
     const [company, setCompany] = useState({});
 
     const {id} = useParams();
@@ -46,7 +43,7 @@ export const AboutUsUpdate = () => {
     }
 
     return (
-        <div  style={backgroundImage}>
+        <div  className='back-color'>
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-md-6">
@@ -62,7 +59,7 @@ export const AboutUsUpdate = () => {
                       <Form>
                         <div className="form-group">
                           <label htmlFor="aboutUs">About Us</label>
-                          <Field type="text" name="aboutUs" className="form-control" id="aboutUs" placeholder="About Us" />
+                          <Field as="textarea" name="aboutUs" className="form-control" id="aboutUs" placeholder="About Us" />
                           <ErrorMessage name="aboutUs" component="div" style={{ color: "red", height: 30 }} />
                         </div>
                         <div className="form-group">

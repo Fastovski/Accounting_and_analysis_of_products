@@ -29,31 +29,43 @@ export const AddEmployee = () => {
         setSubmitting(false);
     }
 
-    return(
-        <div className="add-employee-form">
-            <div className='addempForm'>
-            <Formik initialValues={{ name: '', email: '', password: '' }} validationSchema={validationSchema} onSubmit={onSubmit}>
-                <Form>
-                    <div className="form-fieldName">
-                        <label htmlFor="name">Имя</label>
-                        <Field name="name" type="text" />
-                        <ErrorMessage name="name" component="div" />
+    return (
+        <div className='back-color'>
+            <div className="container">
+                <div className="row justify-content-center">
+                    <div className="col-md-6">
+                        <div className="card p-3 mb-2 p-3 mb-2 bg-info text-dark shadow">
+                            <div className="card-header">Добавление менеджера</div>
+                            <div className="card-body">
+                                <Formik initialValues={{ name: '', email: '', password: '' }} validationSchema={validationSchema} onSubmit={onSubmit}>
+                                    {({ isSubmitting }) => (
+                                        <Form>
+                                            <div className="form-group">
+                                                <label htmlFor="name">Имя</label>
+                                                <Field name="name" type="text" className="form-control" id="name" />
+                                                <ErrorMessage name="name" component="div" style={{ color: "red", height: 30 }} />
+                                            </div>
+                                            <div className="form-group">
+                                                <label htmlFor="email">Email</label>
+                                                <Field name="email" type="email" className="form-control" id="email" />
+                                                <ErrorMessage name="email" component="div" style={{ color: "red", height: 30 }} />
+                                            </div>
+                                            <div className="form-group">
+                                                <label htmlFor="password">Пароль</label>
+                                                <Field name="password" type="password" className="form-control" id="password" />
+                                                <ErrorMessage name="password" component="div" style={{ color: "red", height: 30 }} />
+                                            </div>
+                                            <button type="submit" className="btn btn-primary w-50" disabled={isSubmitting}>Отправить</button>
+                                        </Form>
+                                    )}
+                                </Formik>
+                            </div>
+                            <Link className="btn btn-danger w-50 my-2" to={"/admin"}>Назад</Link>
+                        </div>
                     </div>
-                    <div className="form-fieldMail">
-                        <label htmlFor="email">Email</label>
-                        <Field name="email" type="email" />
-                        <ErrorMessage name="email" component="div" />
-                    </div>
-                    <div className="form-fieldPass">
-                        <label htmlFor="password">Пароль</label>
-                        <Field name="password" type="password" />
-                        <ErrorMessage name="password" component="div" />
-                    </div>
-                    <button type="submit">Отправить</button>
-                </Form>
-            </Formik>
-            <Link className="btn btn-danger w-50 my-2" to={"/admin"}>Назад</Link>
+                </div>
             </div>
         </div>
     );
+    
 }

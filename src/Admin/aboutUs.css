@@ -3,11 +3,7 @@
     background-color: #778899;
 }
 
-.add-employee-form {
-    background-color: #778899;
-}
-
-.container, .addempForm {
+.container {
     background-color: #f8f8ff;
     padding: 20px;
     border-radius: 5px;
@@ -17,7 +13,7 @@
 }
 
 /* Стили для полей ввода */
-.form-control, .form-fieldName, .form-fieldMail, .form-fieldPass {
+.form-control {
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
@@ -27,7 +23,7 @@
 }
 
 /* Стили для кнопки отправки формы */
-.btn, button[type="submit"] {
+.btn {
     background-color: #95959f;
     color: #f8f8ff;
     padding: 10px;
@@ -38,7 +34,7 @@
 }
 
 /* Стили для сообщений об ошибках */
-.form-group div, .form-fieldName div, .form-fieldMail div, .form-fieldPass div {
+.form-group div {
     color: red;
     font-size: 14px;
 }

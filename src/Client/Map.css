@@ -2,18 +2,28 @@
     font-family: sans-serif;
     text-align: center;
 }
+
+
 .map-container {
     height: 80vh; /* Высота контейнера карты */
     width: 80%; /* Ширина контейнера карты */
-    margin: auto; /* Центрирование контейнера карты */
+    border-radius: 15px;
+    order: 2;
+    margin-top: 20px;
+    overflow: hidden; /* Обрезает контент, выходящий за границы элемента */
   }
   
   .map-content {
-    height: 100%; /* Высота содержимого карты */
-    width: 100%; /* Ширина содержимого карты */
+    height: 80vh;
+    width: 80%;
   }
 
   #root {
     height: 100vh;
+  }
+
+  .leaflet-container {
+    height: 100vh;
+    
   }
   
