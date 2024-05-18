@@ -55,6 +55,8 @@ export const UserMenu=()=> {
                                     <Dropdown.Item href="/proposal/history"> История заявок |</Dropdown.Item>
                                     <Dropdown.Item href="/proposal/approved"> Одобренные заявки |</Dropdown.Item>
                                     <Dropdown.Item href="/user/money"> Пополнение баланса |</Dropdown.Item>
+                                    <Dropdown.Item href="/map"> Карта |</Dropdown.Item>
+
                                     <Dropdown.Divider />
                                 </Dropdown.Menu>
                             </Dropdown>

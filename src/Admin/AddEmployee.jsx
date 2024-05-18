@@ -3,6 +3,8 @@ import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
+import './AddEmployee.css'
+
 
 export const AddEmployee = () => {
     let navigate = useNavigate();
@@ -29,19 +31,20 @@ export const AddEmployee = () => {
 
     return(
         <div className="add-employee-form">
+            <div className='addempForm'>
             <Formik initialValues={{ name: '', email: '', password: '' }} validationSchema={validationSchema} onSubmit={onSubmit}>
                 <Form>
-                    <div className="form-field">
+                    <div className="form-fieldName">
                         <label htmlFor="name">Имя</label>
                         <Field name="name" type="text" />
                         <ErrorMessage name="name" component="div" />
                     </div>
-                    <div className="form-field">
+                    <div className="form-fieldMail">
                         <label htmlFor="email">Email</label>
                         <Field name="email" type="email" />
                         <ErrorMessage name="email" component="div" />
                     </div>
-                    <div className="form-field">
+                    <div className="form-fieldPass">
                         <label htmlFor="password">Пароль</label>
                         <Field name="password" type="password" />
                         <ErrorMessage name="password" component="div" />
@@ -50,6 +53,7 @@ export const AddEmployee = () => {
                 </Form>
             </Formik>
             <Link className="btn btn-danger w-50 my-2" to={"/admin"}>Назад</Link>
+            </div>
         </div>
     );
 }

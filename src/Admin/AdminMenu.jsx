@@ -47,6 +47,9 @@ export const AdminMenu = () => {
                       <li className="nav-item">
                           <a className="nav-link" href="/admin/graphmodel">График отчетности</a>
                       </li>
+                      <li>
+                          <a className="nav-link" href="/admin/aboutusupdate">Изменить информацию о компании</a>
+                      </li>
                   </ul>
               </div>
           </div>
@@ -61,6 +64,7 @@ export const AdminMenu = () => {
       </div>
     </div>
 )
+}
 
   // return (
   //       <div>
@@ -97,7 +101,7 @@ export const AdminMenu = () => {
   //   />
   //   </div>
   // )
-}
+
 
 
 // import React, { useEffect, useState } from 'react';

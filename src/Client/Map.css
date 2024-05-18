@@ -1,0 +1,19 @@
+.MapComponent{
+    font-family: sans-serif;
+    text-align: center;
+}
+.map-container {
+    height: 80vh; /* Высота контейнера карты */
+    width: 80%; /* Ширина контейнера карты */
+    margin: auto; /* Центрирование контейнера карты */
+  }
+  
+  .map-content {
+    height: 100%; /* Высота содержимого карты */
+    width: 100%; /* Ширина содержимого карты */
+  }
+
+  #root {
+    height: 100vh;
+  }
+  
