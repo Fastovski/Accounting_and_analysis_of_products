@@ -3,6 +3,7 @@ import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import axios from "axios";
+import '../Client/menu.css'
 
 export const UpdateProduct=()=> {
 
@@ -37,7 +38,7 @@ export const UpdateProduct=()=> {
     }
 
     return (
-        <div>
+        <div className='menu'>
             <Formik initialValues={{name: '', category: '', cost: '', description:''}} validationSchema={validationSchema} onSubmit={onSubmit}>
                 <Form>
                     <div className="container">

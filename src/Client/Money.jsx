@@ -2,6 +2,7 @@ import React from 'react'
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from "axios";
+import './menu.css'
 
 export const Money = () => {
 
@@ -18,7 +19,7 @@ export const Money = () => {
     }
 
     return (
-        <div>
+        <div className='menu'>
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-md-6">

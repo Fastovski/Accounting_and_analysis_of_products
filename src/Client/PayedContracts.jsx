@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
 import MUIDataTable from "mui-datatables";
-import Dropdown from 'react-bootstrap/Dropdown';
 import './menu.css'
 
 export const PayedContracts = () => {

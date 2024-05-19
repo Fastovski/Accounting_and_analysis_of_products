@@ -27,10 +27,10 @@ export const UserMenu=()=> {
         setProduct(result.data);
     }
 
-    const columns = ["Name", "Category", "Cost", "Action"];
+    const columns = ["Name", "Category", "Описание", "Cost", "Action"];
         
         
-    const data = product.map((product, index) => [product.name, product.category, product.cost, [<Link key={index} className='btn btn-outline-primary mx-2' to={`/proposal/add/${product.id}`}>Оформить заявку</Link>]]);
+    const data = product.map((product, index) => [product.name, product.category, product.description, product.cost, [<Link key={index} className='btn btn-outline-primary mx-2' to={`/proposal/add/${product.id}`}>Заказать</Link>]]);
 
     const options = {
         selectableRowsOnClick: false,
@@ -41,9 +41,6 @@ export const UserMenu=()=> {
             <nav className="navbar navbar-expand-lg navbar-light bg-light ">
                 <div className="container-fluid nav-div">
                     <a className="navbar-brand" href="/">Home</a>
-                    {/* <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button> */}
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav me-auto">
                             <li className="nav-item">

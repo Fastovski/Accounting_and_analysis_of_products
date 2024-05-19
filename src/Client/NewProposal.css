@@ -1,0 +1,41 @@
+/* Основные стили для формы */
+.proposalForm {
+    background-color: #778899;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #f8f8ff;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* Стили для полей ввода */
+.form-control {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border: 1px solid #95959f;
+}
+
+/* Стили для кнопки отправки формы */
+.btn {
+    background-color: #95959f;
+    color: #f8f8ff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Стили для сообщений об ошибках */
+.form-group div {
+    color: red;
+    font-size: 14px;
+}

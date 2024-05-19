@@ -1,29 +1,55 @@
 .MapComponent{
-    font-family: sans-serif;
-    text-align: center;
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #dcdcdc;
 }
 
+.company-about {
+  background-color: #dcdcdc;  
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  margin: 0; /* Обнуляет отступы */
+}
 
 .map-container {
-    height: 80vh; /* Высота контейнера карты */
-    width: 80%; /* Ширина контейнера карты */
-    border-radius: 15px;
-    order: 2;
-    margin-top: 20px;
-    overflow: hidden; /* Обрезает контент, выходящий за границы элемента */
-  }
-  
-  .map-content {
-    height: 80vh;
-    width: 80%;
-  }
+  height: 50vh; /* Высота контейнера карты */
+  width: 50%; /* Ширина контейнера карты */
+  background-color: #dcdcdc;
+  border-radius: 15px;
+  order: 2;
+  margin-top: 20px;
+  margin-left: 65vh;
+  overflow: hidden; /* Обрезает контент, выходящий за границы элемента */
+  display: flex; /* Добавлено: Включает гибкое выравнивание */
+  justify-content: center; /* Добавлено: Выравнивает контент по центру по горизонтали */
+  align-items: center; /* Добавлено: Выравнивает контент по центру по вертикали */
+}
 
-  #root {
-    height: 100vh;
-  }
+.navbar-nav.me-auto {
+  display: flex;
+  justify-content: center; /* Изменено: Выравнивает элементы по центру */
+  gap: 80px; /* Добавлено: Задает расстояние между элементами */
+  background-color: #dcdcdc; /* Очень светло-серый цвет */
+}
 
-  .leaflet-container {
-    height: 100vh;
-    
-  }
-  
+.map-content {
+  background-color: #dcdcdc;
+  height: 80vh;
+  margin-right: 100px;
+  width: 80%;
+}
+
+#root {
+  height: 100vh;
+  background-color: #dcdcdc;
+}
+
+.leaflet-container {
+  height: 80vh; /* Изменено: Задает высоту контейнера карты равной 80vh */
+  background-color: #dcdcdc;
+}

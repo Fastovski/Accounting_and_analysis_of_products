@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from "axios";
 import { Link } from 'react-router-dom';
 import MUIDataTable from "mui-datatables";
+import '../Client/menu.css'
 
 export const EmployeeMenu=()=> {
     
@@ -31,27 +32,33 @@ export const EmployeeMenu=()=> {
       selectableRows:'multiply'
     };
     return (
-        <div>
+        <div className='menu'>
             <nav className="navbar navbar-expand-lg navbar-light bg-light ">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="/">Home</a>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarNav" >
-                        
-                    </div>
-                    <Link className="btn btn-danger w-50 my-2" to={"/banquet/add"}>Добавить продукт</Link>
-                    <Link className="btn btn-danger w-50 my-2" to={"/employee/handle"}>|  Одобрить заявку</Link>
-
-
+                      <div className="collapse navbar-collapse" id="navbarNav" >
+                        <ul className="navbar-nav me-auto">
+                            <li className="nav-item">
+                                <a className="nav-link" href="/banquet/add">Добавить продукт</a>
+                            </li>
+                            <li className='nav-link'>
+                                <a className="nav-link" href="/employee/handle"> Одобрить заявку</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/admin/graphmodel">Посмотреть график по менеджерам</a>
+                            </li>
+                        </ul>
+                      </div>
                 </div>
             </nav>
+            <br/>
+            <div className='table-div'>
             <MUIDataTable
-        data={data}
-        columns={columns}
-        options={options}
-      />
+                data={data}
+                columns={columns}
+                options={options}
+            />
+            </div>
 
         </div>
     )

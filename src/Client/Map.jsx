@@ -34,6 +34,14 @@ const MapComponent = () => {
             <div className="header">
                 <h1>О Нас</h1>
             </div>
+            <div>
+                <ul className="navbar-nav me-auto">
+                    <li className="nav-item">
+                        <a className="nav-link" href="user">Меню</a>
+                    </li>
+                </ul>
+            </div>
+
             {companies.map((company, index) => (
                 <div key={index} className={`company-container company-container-${index}`}>
                     <div className="company-about">{company.aboutUs}</div>
@@ -52,6 +60,15 @@ const MapComponent = () => {
                     </MapContainer>
                 </div>
             </div>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
             {companies.map((company, index) => (
                 <div key={index} className={`company-container company-container-${index}`}>
                     <div className="company-phone">{company.phoneNumber}</div>
