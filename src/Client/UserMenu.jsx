@@ -40,7 +40,7 @@ export const UserMenu=()=> {
         <div className='usermenu'>
             <nav className="navbar navbar-expand-lg navbar-light bg-light ">
                 <div className="container-fluid nav-div">
-                    <a className="navbar-brand" href="/">Home</a>
+                    <a className="navbar-brand" href="/">Выход из аккаунта</a>
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav me-auto">
                             <li className="nav-item">

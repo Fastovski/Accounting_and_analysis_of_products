@@ -19,13 +19,10 @@ import {Money} from './Client/Money';
 import MapComponent from './Client/Map';
 import { AboutUsUpdate } from './Admin/aboutUs';
 import { Index } from './Auth/index';
+import { AllPayedContracts } from './Manager/AllContracts';
 
 
 import './App.css';
-
-
-
-
 
 function App() {
   return (
@@ -47,6 +44,8 @@ function App() {
           <Route path = '/employee' element = {<EmployeeMenu/>}/>
           <Route path = '/banquet/update/:id' element = {<UpdateProduct/>}/>
           <Route path = '/employee/handle' element={<HadlingProposal/>}/>
+          <Route path='/employee/allcontracts' element={<AllPayedContracts/>}/>
+
 
           <Route path="/user" element={<UserMenu/>}/>
           

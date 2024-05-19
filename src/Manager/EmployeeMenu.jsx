@@ -47,6 +47,9 @@ export const EmployeeMenu=()=> {
                             <li className="nav-item">
                                 <a className="nav-link" href="/admin/graphmodel">Посмотреть график по менеджерам</a>
                             </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/employee/allcontracts">Посмотреть все контракты</a>
+                            </li>
                         </ul>
                       </div>
                 </div>

@@ -25,9 +25,9 @@ export const PayedContracts = () => {
         setProposal(result.data);
     }
 
-    const columns = ["Название","Время","Общая Стоимость","Дата оформления"];
+    const columns = ["Название","Общая Стоимость","Дата оформления"];
 
-    const data = proposal.map((proposals) => [proposals.proposalId.productId.name, proposals.proposalId.deliveryTime, proposals.proposalId.totalCost,proposals.conclusion]);
+    const data = proposal.map((proposals) => [proposals.proposalId.productId.name,  proposals.proposalId.totalCost,proposals.conclusion]);
 
     const options = {
         selectableRowsOnClick:false,

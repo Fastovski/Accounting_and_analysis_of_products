@@ -37,12 +37,13 @@ export const Index=()=> {
                             <a className="nav-link" href="/auth">Авторизоваться</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/reg">Зарегестрироваться</a>
+                            <a className="nav-link" href="/reg">Зарегистрироваться</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
+        <br/>
         <div className="table-div">
             <MUIDataTable
                 data={data}

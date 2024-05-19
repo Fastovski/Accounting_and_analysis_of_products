@@ -50,7 +50,7 @@ export const Money = () => {
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="cvv">CVV код</label>
-                                        <input type={"text"} className="form-control" id="cvv" placeholder="CVV" {...register("cvv", { required: "Поле обязательно к заполнению", pattern: { value: /^[0-9]{3}$/, message: "CVV код должен состоять из 3 цифр" } })} />
+                                        <input type={"password"} className="form-control" id="cvv" placeholder="CVV" {...register("cvv", { required: "Поле обязательно к заполнению", pattern: { value: /^[0-9]{3}$/, message: "CVV код должен состоять из 3 цифр" } })} />
                                         <div style={{ color: "red", height: 30 }}>
                                             {errors?.cvv && <p>{errors?.cvv?.message}</p>}
                                         </div>
