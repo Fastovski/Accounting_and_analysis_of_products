@@ -16,10 +16,10 @@ export const Index=()=> {
         setProduct(result.data);
     }
 
-    const columns = ["Name", "Category", "Cost"];
+    const columns = ["Name", "Category", "Desription", "Cost"];
         
         
-    const data = product.map((product, index) => [product.name, product.category, product.cost]);
+    const data = product.map((product, index) => [product.name, product.category, product.description, product.cost]);
 
     const options = {
         selectableRowsOnClick: false,

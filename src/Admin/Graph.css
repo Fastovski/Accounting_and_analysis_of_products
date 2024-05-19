@@ -1,0 +1,9 @@
+.mback {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.link {
+    margin-bottom: 20px;
+}
